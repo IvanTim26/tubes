@@ -1,3 +1,21 @@
+<?php
+	require 'functions.php';
+	if(isset($_POST['submit'])){	
+		if(registrasi($_POST)>0){
+			echo "
+				<script>
+					alert('Akun Berhasil Dibuat!');
+				
+				</script>";			
+		}else{
+			echo "
+				<script>
+					alert('Akun Gagal Dibuat!');
+				
+				</script>";		
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,18 +34,18 @@
         <p style="text-align: left;margin-left: 3rem;">
             Already an user?<span></span> <a href="index.html">Login</a>
         </p>
-        <form action="#" style="margin: 1rem 3rem;">
-            <input type="text" id="nama" name="nama" placeholder="Name">
+        <form action="" method="POST" style="margin: 1rem 3rem;">
+            <input type="text" id="nama" name="nama" placeholder="Name" required>
             <br><br>
-            <input type="text" id="address" name="address" placeholder="Address">
+            <input type="text" id="address" name="address" placeholder="Address" required>
             <br><br>
-            <input type="text" id="email" name="email" placeholder="Email">
+            <input type="text" id="email" name="email" placeholder="Email" required>
             <br><br>
-            <input type="text" id="phone" name="phone" placeholder="Phone number">
+            <input type="text" id="phone" name="phone" placeholder="Phone number" required>
             <br><br>
-            <input type="text" id="pass" name="pass" placeholder="Password">
+            <input type="password" id="pass" name="pass" placeholder="Password" required>
             <br><br>
-            <input type="button" value="SIGN UP"></input>
+            <input type="submit" name="submit" value="SIGN UP"/>
         </form>
        
     </div>
